@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "SECRET_KEY": "@secret_key",
+    "JWT_SECRET": "@jwt_secret",
+    "DATABASE_URL": "@database_url",
+    "REDIS_URL": "@redis_url"
+  }
+}
